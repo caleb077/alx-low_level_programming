@@ -10,19 +10,17 @@
 
 int main(void)
 {
-	int d;
+	int num;
+	char letter;
 
-	for (d = 0; d < 100; d++)
-	{
-		putchar((d / 10) + '0');
-		putchar((d % 10) + '0');
-		if (d != 99)
-		{
-			putchar(',');
-			putchar(' ');
-		}
-	}
+	for (num = 0; num < 10; num++)
+		putchar((num % 10) + '0');
+
+	for (letter = 'a'; letter <= 'f'; letter++)
+		putchar(letter);
+
 	putchar('\n');
 
 	return (0);
 }
+
