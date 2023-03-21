@@ -1,52 +1,29 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-int sum(int n);
-int fib(int n);
+/**
+ * main - Prints the sum of even-valued Fibonacci sequence
+ *        terms not exceeding 4000000.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	unsigned long fib1 = 0, fib2 = 1, fibsum;
+	float tot_sum;
 
-const int N = 4000000;
+	while (1)
+	{
+		fibsum = fib1 + fib2;
+		if (fibsum > 4000000)
+			break;
 
-int main() {
+		if ((fibsum % 2) == 0)
+			tot_sum += fibsum;
 
-  int i = 2;
-
-	cout << sum(i);
-
-	return 0;
-}
-
-int sum(int n) {
-
-	int sum = 0; // suma de los terminos pares
-
-	while (fib(n) < N) {
-
-		if (fib(n)%2==0) {
-
-			sum += fib(n);
-		}
-
-		n++;
+		fib1 = fib2;
+		fib2 = fibsum;
 	}
+	printf("%.0f\n", tot_sum);
 
-	return sum;
-}
-
-int fib(int n) {
-
-	int a = 0; // anterior
-	int b = 1; // posterior
-	int c = 0; // suma de a+b
-	int i = 1; // contador
-
-	while (i <= n) {
-
-		c = a + b;
-		a = b;
-		b = c;
-
-		i++;
-	}
-
-	return c;
+	return (0);
 }
