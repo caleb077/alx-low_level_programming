@@ -1,16 +1,21 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
+
 
 /**
+ *
+ *
  */
+
 int main(void)
 {
-int num;
+	srand((unsigned int)(time(NULL)));
 
-srand(time(0));
-num = rand();
-printf("%i\n", num);
-return (0);
+	int index = 0;
+	char characters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/,.-+=~`<>:";
+	for(index = 0; index < 12; index++)
+	{
+		printf("%c", characters[rand() % (sizeof characters - 1)]);
+	}
 }
